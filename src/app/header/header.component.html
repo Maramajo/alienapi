@@ -1,0 +1,95 @@
+<div class="container-fluid">
+    <div class="mb-5">
+     <nav class=" fixed-top navbar navbar-expand-lg navbar-light bg-dark">
+      <a class="navbar-brand text-white" 
+      href="http://www.php.net">
+      <img class="rounded-circle" src="assets/img/rafa.jpg" width="30" height="30" alt="">
+      </a>
+      <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" 
+      aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+          <a class="nav-link text-white inactive" 
+          id="home" href="http://www.php.net">
+            <i class="fa fa-fw fa-home"></i> Home <span class="sr-only">(página atual)</span></a>
+    
+          </li>
+          <li class="nav-item" [class.active]="ctActive">
+            <a class="nav-link text-white inactive" id="cont" 
+            routerLinkActive="active" routerLink="/contato">
+            <i class="fa fa-fw fa-envelope"></i> Contato</a>
+          </li>
+          <li class="nav-item dropdown inactive"
+            [class.active]="ddActive">
+            <a class="nav-link dropdown-toggle text-white inactive" 
+            href="http://www.php.net"
+            id="navbarDropdown" role="button" data-toggle="dropdown" 
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-shopping-cart"></i>
+             Stocks
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" 
+              routerLinkActive="active" routerLink="/stocks">Início</a>
+              <a class="dropdown-item inactive" 
+              routerLinkActive="active" routerLink="/familias">Famílias</a>
+              <a class="dropdown-item inactive" 
+              href="http://www.php.net">Movimentos</a>
+              <a class="dropdown-item inactive" 
+              href="http://www.php.net">Produtos</a>
+              <a class="dropdown-item inactive" 
+              href="http://www.php.net">Taxas</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item inactive" 
+              href="http://www.php.net">BookService</a>
+              <a class="dropdown-item inactive" 
+              href="http://www.php.net">Autores</a>
+    
+            </div>
+          </li>
+          <li [hidden] = "!user" class="nav-item">
+                    <a class=" nav-link text-white inactive" href="http://www.php.net">
+                    <i class="fa fa-fw fa-window-close text-danger"></i>
+                    <strong>aqui vai o nome</strong></a>
+          </li>                    
+          <li [hidden] = "user" class="nav-item">
+
+                    <a class="nav-link text-white inactive" href="http://www.php.net">
+                    <i class="fa fa-fw fa-user text-success"></i> Login</a>
+    
+          </li>
+    
+          <li class="nav-item">
+            <a class="nav-link text-info disabled" href="#">Desativado</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+          <input class="form-control mr-sm-2" type="text" name="text_banco" required 
+          placeholder="Base de Dados" class="form-control">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        </form>
+      </div>
+    </nav> 
+    </div>
+    <hr/>
+        <div class="row">
+            <div class="col-2">
+            <a href="http://www.php.net" target="#corpo" aria-controls="corpo"><img src="assets/img/apache.png" 
+                class="img-fluid  mt-2" width="200" height="100" alt="php"></a>
+            </div>
+            <div class="col-8 rounded-circle text-center bg-light text-info p-3">
+                <h3>Porta de Entrada</h3>
+            </div>
+            <div class="col-2">
+            <a href="https://codeigniter.com" target="_blank"><img src="assets/img/ci.png" 
+                class="img-fluid float-right" width="150" height="50" alt="codei"></a>
+            </div>
+            
+        </div>
+    <div id=corpo></div>
+    </div>

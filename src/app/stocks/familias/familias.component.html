@@ -1,0 +1,80 @@
+<app-header [quem]="quem"></app-header>
+<h1>familia works</h1>
+<div *ngFor = "let m of familias" >
+<div [hidden]="!m.TOKEN">
+<p>{{m.MESSAGE}}</p>
+<p>{{m.TOKEN}}</p>
+<p>{{fam}}</p>
+</div>
+</div >
+<!-- <div *ngFor = "let r of familias"> -->
+
+<!-- <div *ngFor = "let rr of r.RESULTS"> -->
+
+    <table *ngFor = "let r of familias" class="table table-striped table-responsive-sm 
+    table-condensed compact" id = "tabela_familias">
+        <thead class="thead-dark">
+            <th>Id</th>
+            <th>Família</th>
+            <th>Ancestral</th>
+            <th class="text-center">Ações</th>
+        </thead>
+<tbody>
+    <!-- <div *ngFor = "let r of familias"> -->
+
+    <!-- <div *ngFor = "let rr of fam">  -->
+        <tr *ngFor = "let rr of r.RESULTS">
+            <td class="text-left">{{rr.id_familia}}</td>
+            <td class="text-left">{{rr.designacao}}</td>
+
+            <td>{{rr.ancestral == null ? 'nulo' : rr.ancestral}}</td>
+            <td class="text-center"><a *ngIf="enable" routerLink="/fam-det"
+                [state]="{data:rr, dado:familias}">
+                <span class="badge badge-primary"> Go</span></a></td>
+</tr>
+    <!-- </div> -->
+    
+
+   <!-- <p class="badge badge-secondary">{{rr.id_familia}}</p>
+    {{rr.ancestral == null ? 'nulo' : rr.ancestral}}
+    <a *ngIf="enable" routerLink="/fam-det"
+     [state]="{data:rr, dado:familias}">
+     <span class="badge badge-primary"> Go</span></a>
+ -->
+    <!-- {{r.TOKEN}} -->
+    <!-- </div> -->
+<!-- </div> -->
+</tbody>
+    </table>
+    <!-- <table class="table table-striped table-responsive-sm 
+    table-condensed compact">
+        <thead class="thead-dark">
+            <th>Id</th>
+            <th>Família</th>
+            <th>Ancestral</th>
+            <th class="text-center">Ações</th>
+        </thead>
+<tbody>
+        <tr>
+            <td class="text-left">coluna 1</td>
+            <td class="text-left">couna 2</td>
+            <td>coluna 3</td>
+            <td class="text-right">coluna 4</td>
+</tr>
+</tbody>
+</table> -->
+
+<!-- </div> -->
+<button (click) = "saveFam(familias)">Salva</button>
+
+<script>
+    console.log("ESTOU AQUI");
+    $(document).ready(function() {
+        $('#tabela_familias').DataTable( {
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+            }
+        } );
+    } );
+    </script>
+    

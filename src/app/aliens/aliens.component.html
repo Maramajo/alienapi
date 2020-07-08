@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class="container" id="corpo">
+<h1>Vem vindo ao Alien</h1>
+<div>
+    <form>
+        ID: <input type="number" [(ngModel)] = "alien.id" name = "id"> <br/>
+        Nome: <input type="text" [(ngModel)] = "alien.name" name = "name"> <br/>
+        Pontos: <input type="number" [(ngModel)] = "alien.points" name = "points"> <br/>
+        <table class="table table-striped table-responsive-sm" id = "tabela_familias">
+            <tr>
+                <td>        <button class="btn btn-primary" (click)="addAlien()">Add Alien</button>
+                </td>
+                <td></td>
+                <td>        <button class="btn btn-primary" (click)="updAlien()">Upd Alien</button>
+                </td>
+            </tr>
+        </table>
+
+
+    </form>
+</div>
+<div>
+    <table class="table table-striped table-responsive-sm table-condensed compact" 
+    striped="true" id = "tabela_familias">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Pontos</th>
+            <th>Ações</th>
+        </tr>
+        <tbody>
+        <tr *ngFor= "let al of aliens">
+            <td>{{al.id}}</td>
+            <td>{{al.name}}</td>
+            <td>{{al.points}}</td>
+            <td><button (click)="getAlien(al)">Upd Alien</button> 
+                |
+                <button (click)="delAlien(al)">Del Alien</button>
+            </td>
+        </tr>
+        
+         </tbody>
+    </table>
+</div>
+</div>

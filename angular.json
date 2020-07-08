@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "alienapi"
+    }
+  },
+  "defaultProject": "alienapi",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'alienapi';
+  htmlVariable: string = "<b>Some html.</b><br><h1>teste</h1>";
+
 }

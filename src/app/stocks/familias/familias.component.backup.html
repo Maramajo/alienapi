@@ -1,0 +1,47 @@
+<app-header [quem]="quem"></app-header>
+<div class="row">
+    <div class="col-6 text-right">
+        <p><b>Famílias de produtos</b></p>
+    </div>
+    <div class="col-6 text-right">
+        <a href="stocks/familia_adicionar" class="btn btn-primary ">Adicionar Familia</a>
+    </div>
+</div>
+<div class="row">
+    <!-- <?php if (isset($success)) : ?>
+        <div class="alert alert-success text-center mt-2" id="error-message">
+            <?php echo $success ?>
+        </div>
+    <?php endif; ?> -->
+
+    <div class=" col-12 text-center table-responsive-sm">
+        <div>
+            <table class="table table-striped table-responsive-sm table-condensed compact" id="tabela_familias">
+                <thead class="thead-dark">
+                    <th>Id</th>
+                    <th>Família</th>
+                    <th>Ancestral</th>
+                    <th class="text-center">Ações</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let fa of familias">
+                        <td>{{fa.id_familia}}</td>
+                        <td class="text-left">{{fa.designicao}}</td>
+                        <td>{{fa.ancestral != '' ? fa.ancestral : '-'}}></td>
+                        <!-- <td><?php echo $familia['ancestral'] != '' ? $familia['ancestral'] : '-' ?></td> -->
+                        <td class="text-center">
+                            <a href="<?php echo site_url('stocks/familia_editar/' . $familia['id_familia']) ?>"
+                                class="btn btn-primary btn-sm btn-100">
+                                <i class="fa fa-pencil mr-2"></i>Editar
+                            </a>
+                            <a href="<?php echo site_url('stocks/familia_deletar/' . $familia['id_familia']) ?>"
+                                class="btn btn-danger btn-sm btn-100">
+                                <i class="fa fa-trash mr-2"></i>Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

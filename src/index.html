@@ -6,8 +6,37 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="assets/js/zoom.js"></script>
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/js/zoom.css">
+  <link rel="stylesheet" href="assets/css/datatables.min.css">
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
+
+
 </head>
 <body>
   <app-root></app-root>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+	<!-- <script src="assets/js/datatables.min.js"></script> -->
+	<script src="assets/js/app.js"></script>
+	<script src="assets/js/testes.js"></script> 
+<script>
+        console.log("ESTOU AQUI");
+
+    $(document).ready(function() {
+        $('#tabela_familias').DataTable( {
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+            }
+        } );
+    } );
+</script>
+    
 </body>
 </html>
